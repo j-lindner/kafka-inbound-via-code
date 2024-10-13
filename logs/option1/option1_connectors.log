@@ -1,0 +1,641 @@
+ _____                             _
+/  __ \                           | |
+| /  \/ ___  _ __  _ __   ___  ___| |_ ___  _ __ ___
+| |    / _ \| '_ \| '_ \ / _ \/ __| __/ _ \| '__/ __|
+| \__/\ (_) | | | | | | |  __/ (__| || (_) | |  \__ \
+ \____/\___/|_| |_|_| |_|\___|\___|\__\___/|_|  |___/
+
+Copyright Camunda Services GmbH and/or licensed to Camunda Services GmbH.
+connector-runtime-bundle 8.6.2
+Powered by Spring Boot 3.3.4
+
+2024-10-14T19:46:21.779Z  INFO 1 --- [           main] i.c.c.r.app.ConnectorRuntimeApplication  : Starting ConnectorRuntimeApplication v8.6.2 using Java 21.0.4 with PID 1 (/opt/app/connector-runtime-bundle-8.6.2-with-dependencies.jar started by camunda in /)
+2024-10-14T19:46:21.785Z  INFO 1 --- [           main] i.c.c.r.app.ConnectorRuntimeApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-10-14T19:46:23.137Z  INFO 1 --- [           main] .InboundConnectorBeanDefinitionProcessor : Found inbound connector beans: []
+2024-10-14T19:46:23.357Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.camunda.zeebe.spring.client.annotation.processor.AnnotationProcessorConfiguration' of type [io.camunda.zeebe.spring.client.annotation.processor.AnnotationProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-14T19:46:23.365Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.camunda.connector.runtime.outbound.OutboundConnectorRuntimeConfiguration' of type [io.camunda.connector.runtime.outbound.OutboundConnectorRuntimeConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.403Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'zeebe.client-io.camunda.zeebe.spring.client.properties.ZeebeClientConfigurationProperties' of type [io.camunda.zeebe.spring.client.properties.ZeebeClientConfigurationProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.409Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'camunda.client-io.camunda.zeebe.spring.client.properties.CamundaClientProperties' of type [io.camunda.zeebe.spring.client.properties.CamundaClientProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.414Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.camunda.zeebe.spring.client.configuration.ZeebeClientAllAutoConfiguration' of type [io.camunda.zeebe.spring.client.configuration.ZeebeClientAllAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.418Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.camunda.zeebe.spring.client.configuration.ExecutorServiceConfiguration' of type [io.camunda.zeebe.spring.client.configuration.ExecutorServiceConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.427Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration' of type [org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusMetricsExportAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.434Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'management.prometheus.metrics.export-org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusProperties' of type [org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.440Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'prometheusConfig' of type [org.springframework.boot.actuate.autoconfigure.metrics.export.prometheus.PrometheusPropertiesConfigAdapter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.442Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'prometheusRegistry' of type [io.prometheus.metrics.model.registry.PrometheusRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.444Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration' of type [org.springframework.boot.actuate.autoconfigure.metrics.MetricsAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.447Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'micrometerClock' of type [io.micrometer.core.instrument.Clock$1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.482Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'prometheusMeterRegistry' of type [io.micrometer.prometheusmetrics.PrometheusMeterRegistry] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.495Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'zeebeClientThreadPool' of type [io.camunda.zeebe.spring.client.jobhandling.ZeebeClientExecutorService] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.497Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'commandExceptionHandlingStrategy' of type [io.camunda.zeebe.spring.client.jobhandling.DefaultCommandExceptionHandlingStrategy] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.498Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.camunda.zeebe.spring.client.configuration.ZeebeActuatorConfiguration' of type [io.camunda.zeebe.spring.client.configuration.ZeebeActuatorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.526Z  INFO 1 --- [           main] i.c.z.s.c.a.MicrometerMetricsRecorder    : Enabling Micrometer based metrics for spring-zeebe (available via Actuator)
+2024-10-14T19:46:23.527Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'micrometerMetricsRecorder' of type [io.camunda.zeebe.spring.client.actuator.MicrometerMetricsRecorder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.535Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.camunda.connector.runtime.OutboundConnectorsAutoConfiguration' of type [io.camunda.connector.runtime.OutboundConnectorsAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.671Z  INFO 1 --- [           main] org.camunda.feel.FeelEngine              : Engine created. [value-mapper: CompositeValueMapper(List(org.camunda.feel.impl.JavaValueMapper@63f855b)), function-provider: io.camunda.connector.feel.FeelConnectorFunctionProvider@6dee8ae6, clock: SystemClock, configuration: {externalFunctionsEnabled: false}]
+2024-10-14T19:46:23.863Z  INFO 1 --- [           main] org.camunda.feel.FeelEngine              : Engine created. [value-mapper: CompositeValueMapper(List(org.camunda.feel.impl.JavaValueMapper@3c770db4)), function-provider: io.camunda.connector.feel.FeelConnectorFunctionProvider@5382184b, clock: SystemClock, configuration: {externalFunctionsEnabled: false}]
+2024-10-14T19:46:23.886Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'objectMapper' of type [com.fasterxml.jackson.databind.json.JsonMapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.887Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'io.camunda.zeebe.spring.client.configuration.JsonMapperConfiguration' of type [io.camunda.zeebe.spring.client.configuration.JsonMapperConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.888Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'zeebeJsonMapper' of type [io.camunda.zeebe.client.impl.ZeebeObjectMapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.891Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'parameterResolverStrategy' of type [io.camunda.zeebe.spring.client.jobhandling.parameter.DefaultParameterResolverStrategy] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.894Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'jobWorkerManager' of type [io.camunda.zeebe.spring.client.jobhandling.JobWorkerManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.907Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'outboundConnectorFactory' of type [io.camunda.connector.runtime.core.outbound.DefaultOutboundConnectorFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.910Z  INFO 1 --- [           main] i.c.c.r.s.EnvironmentSecretProvider      : No prefix has been configured, all environment variables are available as connector secrets
+2024-10-14T19:46:23.912Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'defaultSecretProvider' of type [io.camunda.connector.runtime.secret.EnvironmentSecretProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.914Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'springSecretProviderAggregator' of type [io.camunda.connector.runtime.core.secret.SecretProviderAggregator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.918Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'outboundConnectorManager' of type [io.camunda.connector.runtime.outbound.lifecycle.OutboundConnectorManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.919Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'annotationProcessor' of type [io.camunda.connector.runtime.outbound.lifecycle.OutboundConnectorAnnotationProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.920Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deploymentPostProcessor' of type [io.camunda.zeebe.spring.client.annotation.processor.ZeebeDeploymentAnnotationProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.937Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'propertyBasedZeebeWorkerValueCustomizer' of type [io.camunda.zeebe.spring.client.properties.PropertyBasedZeebeWorkerValueCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.939Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'zeebeWorkerPostProcessor' of type [io.camunda.zeebe.spring.client.annotation.processor.ZeebeWorkerAnnotationProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [zeebeAnnotationProcessorRegistry]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+2024-10-14T19:46:23.949Z  WARN 1 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-10-14T19:46:23.968Z  INFO 1 --- [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-10-14T19:46:24.184Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-14T19:46:24.198Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-14T19:46:24.198Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-14T19:46:24.233Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-14T19:46:24.233Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2403 ms
+2024-10-14T19:46:25.068Z  INFO 1 --- [           main] org.ehcache.core.EhcacheManager          : Cache 'tokenCache' created in EhcacheManager.
+2024-10-14T19:46:25.135Z  INFO 1 --- [           main] z.s.c.c.ZeebeClientProdAutoConfiguration : Creating ZeebeClient using ZeebeClientConfiguration [ZeebeClientConfiguration{properties=ZeebeClientConfigurationProperties{environment=ApplicationServletEnvironment {activeProfiles=[], defaultProfiles=[default], propertySources=[ConfigurationPropertySourcesPropertySource {name='configurationProperties'}, StubPropertySource {name='servletConfigInitParams'}, ServletContextPropertySource {name='servletContextInitParams'}, PropertiesPropertySource {name='systemProperties'}, OriginAwareSystemEnvironmentPropertySource {name='systemEnvironment'}, RandomValuePropertySource {name='random'}]}, connectionMode='null', defaultTenantId='<default>', defaultJobWorkerTenantIds=[<default>], applyEnvironmentVariableOverrides=false, enabled=true, broker=Broker{gatewayAddress='zeebe:26500', keepAlive=PT45S}, cloud=Cloud{clusterId='null', clientId='***', clientSecret='***', region='bru-2', scope='null', baseUrl='zeebe.camunda.io', authUrl='https://login.cloud.camunda.io/oauth/token', port=443, credentialsCachePath='null'}, worker=Worker{maxJobsActive=32, threads=1, defaultName='null', defaultType='null', override={}}, message=Message{timeToLive=PT1H, maxMessageSize=4194304}, security=Security{plaintext=true, overrideAuthority='null', certPath='null'}, job=Job{timeout=PT5M, pollInterval=PT0.1S}, ownsJobWorkerExecutor=false, defaultJobWorkerStreamEnabled=false, requestTimeout=PT10S}, camundaClientProperties=io.camunda.zeebe.spring.client.properties.CamundaClientProperties@52eca410, authentication=io.camunda.common.auth.SelfManagedAuthentication@2168def, jsonMapper=io.camunda.zeebe.client.impl.ZeebeObjectMapper@63d0e8d, interceptors=[], zeebeClientExecutorService=io.camunda.zeebe.spring.client.jobhandling.ZeebeClientExecutorService@69a76b74}]
+2024-10-14T19:46:25.513Z  INFO 1 --- [           main] .InboundConnectorBeanDefinitionProcessor : Configuring 0 inbound connectors from bean context
+2024-10-14T19:46:25.521Z  INFO 1 --- [           main] org.camunda.feel.FeelEngine              : Engine created. [value-mapper: CompositeValueMapper(List(org.camunda.feel.impl.JavaValueMapper@40c6d1ef)), function-provider: io.camunda.connector.feel.FeelConnectorFunctionProvider@cda144a, clock: SystemClock, configuration: {externalFunctionsEnabled: false}]
+2024-10-14T19:46:25.701Z  WARN 1 --- [           main] i.m.p.PrometheusMeterRegistry            : A MeterFilter is being configured after a Meter has been registered to this registry. All MeterFilters should be configured before any Meters are registered. If that is not possible or you have a use case where it should be allowed, let the Micrometer maintainers know at https://github.com/micrometer-metrics/micrometer/issues/4920. Enable DEBUG level logging on this logger to see a stack trace of the call configuring this MeterFilter.
+2024-10-14T19:46:25.702Z  WARN 1 --- [           main] i.m.p.PrometheusMeterRegistry            : A MeterFilter is being configured after a Meter has been registered to this registry. All MeterFilters should be configured before any Meters are registered. If that is not possible or you have a use case where it should be allowed, let the Micrometer maintainers know at https://github.com/micrometer-metrics/micrometer/issues/4920. Enable DEBUG level logging on this logger to see a stack trace of the call configuring this MeterFilter.
+2024-10-14T19:46:25.702Z  WARN 1 --- [           main] i.m.p.PrometheusMeterRegistry            : A MeterFilter is being configured after a Meter has been registered to this registry. All MeterFilters should be configured before any Meters are registered. If that is not possible or you have a use case where it should be allowed, let the Micrometer maintainers know at https://github.com/micrometer-metrics/micrometer/issues/4920. Enable DEBUG level logging on this logger to see a stack trace of the call configuring this MeterFilter.
+2024-10-14T19:46:25.729Z  INFO 1 --- [           main] org.ehcache.core.EhcacheManager          : Cache 'tokenCache' created in EhcacheManager.
+2024-10-14T19:46:26.108Z  INFO 1 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-14T19:46:26.215Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-14T19:46:26.226Z  INFO 1 --- [           main] org.camunda.feel.FeelEngine              : Engine created. [value-mapper: CompositeValueMapper(List(org.camunda.feel.impl.JavaValueMapper@f13e0a2)), function-provider: io.camunda.connector.feel.FeelConnectorFunctionProvider@b5bddfe, clock: SystemClock, configuration: {externalFunctionsEnabled: false}]
+2024-10-14T19:46:26.246Z  INFO 1 --- [           main] i.c.z.s.c.jobhandling.JobWorkerManager   : . Starting Zeebe worker: ZeebeWorkerValue{type='io.camunda:connector-kafka:1', name='KAFKAOUT', timeout=null, maxJobsActive=null, requestTimeout=null, pollInterval=null, autoComplete=true, fetchVariables=[authentication, topic, message, schemaStrategy, additionalProperties, headers], enabled=null, methodInfo=null, tenantIds=null, forceFetchAllVariables=null, streamEnabled=null, streamTimeout=null}
+2024-10-14T19:46:26.261Z  INFO 1 --- [           main] i.c.z.s.c.jobhandling.JobWorkerManager   : . Starting Zeebe worker: ZeebeWorkerValue{type='io.camunda:http-json:1', name='RESTOUT', timeout=null, maxJobsActive=null, requestTimeout=null, pollInterval=null, autoComplete=true, fetchVariables=[url, method, authentication, headers, queryParameters, connectionTimeoutInSeconds, readTimeoutInSeconds, writeTimeoutInSeconds, body], enabled=null, methodInfo=null, tenantIds=null, forceFetchAllVariables=null, streamEnabled=null, streamTimeout=null}
+2024-10-14T19:46:26.313Z  INFO 1 --- [   scheduling-1] .c.c.r.i.e.InboundExecutableRegistryImpl : Inbound connector status report - 0 executables active
+2024-10-14T19:46:26.315Z  INFO 1 --- [           main] i.c.c.r.app.ConnectorRuntimeApplication  : Started ConnectorRuntimeApplication in 5.086 seconds (process running for 5.522)
+2024-10-14T19:46:26.626Z ERROR 1 --- [   scheduling-1] i.c.c.r.i.i.ProcessDefinitionImporter    : Failed to import process elements
+
+io.camunda.identity.sdk.impl.rest.exception.RestException: request failed with status code '404' and body '{"error":"Realm does not exist"}'
+        at io.camunda.identity.sdk.impl.rest.RestClient.send(RestClient.java:123)
+        at io.camunda.identity.sdk.impl.rest.RestClient.request(RestClient.java:105)
+        at io.camunda.identity.sdk.impl.keycloak.KeycloakAuthentication.requestFreshToken(KeycloakAuthentication.java:91)
+        at io.camunda.identity.sdk.authentication.AbstractAuthentication.requestToken(AbstractAuthentication.java:91)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+        at io.camunda.identity.sdk.annotation.AnnotationProcessor.lambda$apply$0(AnnotationProcessor.java:33)
+        at jdk.proxy2/jdk.proxy2.$Proxy97.requestToken(Unknown Source)
+        at io.camunda.common.auth.SelfManagedAuthentication.getIdentityToken(SelfManagedAuthentication.java:31)
+        at io.camunda.common.auth.SelfManagedAuthentication.generateToken(SelfManagedAuthentication.java:23)
+        at io.camunda.common.auth.JwtAuthentication.getTokenHeader(JwtAuthentication.java:28)
+        at io.camunda.common.http.DefaultHttpClient.retrieveToken(DefaultHttpClient.java:206)
+        at io.camunda.common.http.DefaultHttpClient.post(DefaultHttpClient.java:147)
+        at io.camunda.operate.CamundaOperateClient.searchProcessDefinitionResults(CamundaOperateClient.java:46)
+        at io.camunda.connector.runtime.inbound.importer.ProcessDefinitionSearch.query(ProcessDefinitionSearch.java:72)
+        at io.camunda.connector.runtime.inbound.importer.ProcessDefinitionImporter.scheduleImport(ProcessDefinitionImporter.java:55)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+        at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+        at io.micrometer.observation.Observation.observe(Observation.java:499)
+        at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+        at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+        at java.base/java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+        at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+
+2024-10-14T19:46:26.762Z  WARN 1 --- [-worker-ELG-1-6] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:26.763Z  WARN 1 --- [-worker-ELG-1-6] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:26.794Z  WARN 1 --- [ault-executor-4] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker RESTOUT and job type io.camunda:http-json:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489)
+        at io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453)
+        at io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:26.804Z  WARN 1 --- [ault-executor-1] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker KAFKAOUT and job type io.camunda:connector-kafka:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.DelayedClientCall$DelayedListener$3.run(DelayedClientCall.java:489)
+        at io.grpc.internal.DelayedClientCall$DelayedListener.delayOrExecute(DelayedClientCall.java:453)
+        at io.grpc.internal.DelayedClientCall$DelayedListener.onClose(DelayedClientCall.java:486)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:26.952Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:26.960Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:26.966Z  WARN 1 --- [ault-executor-3] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker KAFKAOUT and job type io.camunda:connector-kafka:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:26.976Z  WARN 1 --- [ault-executor-0] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker RESTOUT and job type io.camunda:http-json:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:27.208Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:27.218Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:27.219Z  WARN 1 --- [ault-executor-1] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker KAFKAOUT and job type io.camunda:connector-kafka:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:27.232Z  WARN 1 --- [ault-executor-1] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker RESTOUT and job type io.camunda:http-json:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:27.586Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:27.590Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:27.600Z  WARN 1 --- [ault-executor-0] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker RESTOUT and job type io.camunda:http-json:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:27.607Z  WARN 1 --- [ault-executor-3] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker KAFKAOUT and job type io.camunda:connector-kafka:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:28.212Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:28.221Z  WARN 1 --- [ault-executor-4] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker RESTOUT and job type io.camunda:http-json:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:28.239Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:28.245Z  WARN 1 --- [ault-executor-3] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker KAFKAOUT and job type io.camunda:connector-kafka:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:29.233Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:29.235Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:29.238Z  WARN 1 --- [ault-executor-1] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker RESTOUT and job type io.camunda:http-json:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:29.243Z  WARN 1 --- [ault-executor-4] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker KAFKAOUT and job type io.camunda:connector-kafka:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 404 and message Not Found.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:30.719Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:30.744Z  WARN 1 --- [ault-executor-0] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker KAFKAOUT and job type io.camunda:connector-kafka:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 401 and message Unauthorized.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:30.899Z  INFO 1 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-14T19:46:30.900Z  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-14T19:46:30.901Z  INFO 1 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-14T19:46:30.926Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:30.949Z  WARN 1 --- [ault-executor-4] io.camunda.zeebe.client.job.poller       : Failed to activate jobs for worker RESTOUT and job type io.camunda:http-json:1
+
+io.grpc.StatusRuntimeException: CANCELLED
+        at io.grpc.Status.asRuntimeException(Status.java:533)
+        at io.grpc.stub.ClientCalls$StreamObserverToCallListenerAdapter.onClose(ClientCalls.java:481)
+        at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:564)
+        at io.grpc.internal.ClientCallImpl.access$100(ClientCallImpl.java:72)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInternal(ClientCallImpl.java:729)
+        at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:710)
+        at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+        at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:133)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.io.IOException: Failed while requesting access token with status code 401 and message Unauthorized.
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.fetchCredentials(OAuthCredentialsProvider.java:157)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsCache.computeIfMissingOrInvalid(OAuthCredentialsCache.java:100)
+        at io.camunda.zeebe.client.impl.oauth.OAuthCredentialsProvider.applyCredentials(OAuthCredentialsProvider.java:79)
+        at io.camunda.zeebe.client.impl.ZeebeCallCredentials.lambda$applyRequestMetadata$0(ZeebeCallCredentials.java:49)
+        ... 3 common frames omitted
+
+2024-10-14T19:46:31.647Z ERROR 1 --- [   scheduling-1] i.c.c.r.i.i.ProcessDefinitionImporter    : Failed to import process elements
+
+io.camunda.identity.sdk.impl.rest.exception.RestException: request failed with status code '401' and body '{"error":"invalid_client","error_description":"Invalid client or Invalid client credentials"}'
+        at io.camunda.identity.sdk.impl.rest.RestClient.send(RestClient.java:123)
+        at io.camunda.identity.sdk.impl.rest.RestClient.request(RestClient.java:105)
+        at io.camunda.identity.sdk.impl.keycloak.KeycloakAuthentication.requestFreshToken(KeycloakAuthentication.java:91)
+        at io.camunda.identity.sdk.authentication.AbstractAuthentication.requestToken(AbstractAuthentication.java:91)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+        at io.camunda.identity.sdk.annotation.AnnotationProcessor.lambda$apply$0(AnnotationProcessor.java:33)
+        at jdk.proxy2/jdk.proxy2.$Proxy97.requestToken(Unknown Source)
+        at io.camunda.common.auth.SelfManagedAuthentication.getIdentityToken(SelfManagedAuthentication.java:31)
+        at io.camunda.common.auth.SelfManagedAuthentication.generateToken(SelfManagedAuthentication.java:23)
+        at io.camunda.common.auth.JwtAuthentication.getTokenHeader(JwtAuthentication.java:28)
+        at io.camunda.common.http.DefaultHttpClient.retrieveToken(DefaultHttpClient.java:206)
+        at io.camunda.common.http.DefaultHttpClient.post(DefaultHttpClient.java:147)
+        at io.camunda.operate.CamundaOperateClient.searchProcessDefinitionResults(CamundaOperateClient.java:46)
+        at io.camunda.connector.runtime.inbound.importer.ProcessDefinitionSearch.query(ProcessDefinitionSearch.java:72)
+        at io.camunda.connector.runtime.inbound.importer.ProcessDefinitionImporter.scheduleImport(ProcessDefinitionImporter.java:55)
+        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+        at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+        at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+        at io.micrometer.observation.Observation.observe(Observation.java:499)
+        at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+        at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+        at java.base/java.util.concurrent.FutureTask.runAndReset(Unknown Source)
+        at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+
+2024-10-14T19:46:33.155Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:33.766Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:43.747Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:44.145Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:54.294Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:46:54.672Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:04.446Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:04.959Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:14.868Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:15.459Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:25.199Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:25.789Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:35.346Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:36.011Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:45.527Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:46.615Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:55.680Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:47:56.882Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:06.332Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:07.549Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:07.570Z  INFO 1 --- [   scheduling-1] i.c.c.r.i.state.ProcessStateStoreImpl    : Detected changes in process elements
+2024-10-14T19:48:07.570Z  INFO 1 --- [   scheduling-1] i.c.c.r.i.state.ProcessStateStoreImpl    : . 1 newly deployed
+2024-10-14T19:48:07.570Z  INFO 1 --- [   scheduling-1] i.c.c.r.i.state.ProcessStateStoreImpl    : . Process: kafka-poc, version: 1 for tenant: <default>
+2024-10-14T19:48:07.570Z  INFO 1 --- [   scheduling-1] i.c.c.r.i.state.ProcessStateStoreImpl    : . 0 replaced with new version
+2024-10-14T19:48:07.570Z  INFO 1 --- [   scheduling-1] i.c.c.r.i.state.ProcessStateStoreImpl    : . 0 deleted
+2024-10-14T19:48:07.815Z  INFO 1 --- [pool-4-thread-1] i.c.c.kafka.inbound.KafkaExecutable      : Subscription activation requested by the Connector runtime
+2024-10-14T19:48:07.829Z  INFO 1 --- [pool-4-thread-1] org.camunda.feel.FeelEngine              : Engine created. [value-mapper: CompositeValueMapper(List(org.camunda.feel.impl.JavaValueMapper@490d14e2)), function-provider: io.camunda.connector.feel.FeelConnectorFunctionProvider@7844aa6e, clock: SystemClock, configuration: {externalFunctionsEnabled: false}]
+2024-10-14T19:48:08.028Z  INFO 1 --- [pool-4-thread-1] i.c.c.r.i.e.BatchExecutableProcessor     : Inbound connector io.camunda:connector-kafka-inbound:1 activated with deduplication ID '<default>-kafka-poc-283781868'
+2024-10-14T19:48:08.048Z  INFO 1 --- [pool-5-thread-1] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values:
+        allow.auto.create.topics = true
+        auto.commit.interval.ms = 5000
+        auto.include.jmx.reporter = true
+        auto.offset.reset = latest
+        bootstrap.servers = [kafka:9093]
+        check.crcs = true
+        client.dns.lookup = use_all_dns_ips
+        client.id = consumer-jensgroup-1
+        client.rack =
+        connections.max.idle.ms = 540000
+        default.api.timeout.ms = 60000
+        enable.auto.commit = false
+        enable.metrics.push = true
+        exclude.internal.topics = true
+        fetch.max.bytes = 52428800
+        fetch.max.wait.ms = 500
+        fetch.min.bytes = 1
+        group.id = jensgroup
+        group.instance.id = null
+        group.protocol = classic
+        group.remote.assignor = null
+        heartbeat.interval.ms = 3000
+        interceptor.classes = []
+        internal.leave.group.on.close = true
+        internal.throw.on.fetch.stable.offset.unsupported = false
+        isolation.level = read_uncommitted
+        key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+        max.partition.fetch.bytes = 1048576
+        max.poll.interval.ms = 300000
+        max.poll.records = 500
+        metadata.max.age.ms = 300000
+        metadata.recovery.strategy = none
+        metric.reporters = []
+        metrics.num.samples = 2
+        metrics.recording.level = INFO
+        metrics.sample.window.ms = 30000
+        partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+        receive.buffer.bytes = 65536
+        reconnect.backoff.max.ms = 1000
+        reconnect.backoff.ms = 50
+        request.timeout.ms = 30000
+        retry.backoff.max.ms = 1000
+        retry.backoff.ms = 100
+        sasl.client.callback.handler.class = null
+        sasl.jaas.config = null
+        sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        sasl.kerberos.min.time.before.relogin = 60000
+        sasl.kerberos.service.name = null
+        sasl.kerberos.ticket.renew.jitter = 0.05
+        sasl.kerberos.ticket.renew.window.factor = 0.8
+        sasl.login.callback.handler.class = null
+        sasl.login.class = null
+        sasl.login.connect.timeout.ms = null
+        sasl.login.read.timeout.ms = null
+        sasl.login.refresh.buffer.seconds = 300
+        sasl.login.refresh.min.period.seconds = 60
+        sasl.login.refresh.window.factor = 0.8
+        sasl.login.refresh.window.jitter = 0.05
+        sasl.login.retry.backoff.max.ms = 10000
+        sasl.login.retry.backoff.ms = 100
+        sasl.mechanism = GSSAPI
+        sasl.oauthbearer.clock.skew.seconds = 30
+        sasl.oauthbearer.expected.audience = null
+        sasl.oauthbearer.expected.issuer = null
+        sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+        sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+        sasl.oauthbearer.jwks.endpoint.url = null
+        sasl.oauthbearer.scope.claim.name = scope
+        sasl.oauthbearer.sub.claim.name = sub
+        sasl.oauthbearer.token.endpoint.url = null
+        security.protocol = SSL
+        security.providers = null
+        send.buffer.bytes = 131072
+        session.timeout.ms = 45000
+        socket.connection.setup.timeout.max.ms = 30000
+        socket.connection.setup.timeout.ms = 10000
+        ssl.cipher.suites = null
+        ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+        ssl.endpoint.identification.algorithm = https
+        ssl.engine.factory.class = null
+        ssl.key.password = null
+        ssl.keymanager.algorithm = SunX509
+        ssl.keystore.certificate.chain = null
+        ssl.keystore.key = null
+        ssl.keystore.location = null
+        ssl.keystore.password = null
+        ssl.keystore.type = JKS
+        ssl.protocol = TLSv1.3
+        ssl.provider = null
+        ssl.secure.random.implementation = null
+        ssl.trustmanager.algorithm = PKIX
+        ssl.truststore.certificates = null
+        ssl.truststore.location = /opt/app/kafka.truststore.jks
+        ssl.truststore.password = [hidden]
+        ssl.truststore.type = JKS
+        value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2024-10-14T19:48:08.077Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2024-10-14T19:48:08.171Z  INFO 1 --- [pool-5-thread-1] o.a.k.clients.consumer.ConsumerConfig    : These configurations '[acks, delivery.timeout.ms, max.block.ms, retention.ms, linger.ms]' were supplied but are not used yet.
+2024-10-14T19:48:08.172Z  INFO 1 --- [pool-5-thread-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.8.0
+2024-10-14T19:48:08.172Z  INFO 1 --- [pool-5-thread-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 771b9576b00ecf5b
+2024-10-14T19:48:08.173Z  INFO 1 --- [pool-5-thread-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1728935288172
+2024-10-14T19:48:08.175Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.LegacyKafkaConsumer  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Subscribed to topic(s): jenstest
+2024-10-14T19:48:08.176Z  INFO 1 --- [pool-5-thread-1] i.c.c.k.inbound.KafkaConnectorConsumer   : Consumer status changed to UP, deduplication ID: <default>-kafka-poc-283781868
+2024-10-14T19:48:08.471Z  INFO 1 --- [pool-5-thread-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Cluster ID: hhGPt1K6QiuzuTj2OF9iCg
+2024-10-14T19:48:08.809Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Discovered group coordinator kafka:9093 (id: 2147483646 rack: null)
+2024-10-14T19:48:08.811Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] (Re-)joining group
+2024-10-14T19:48:08.839Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Request joining group due to: need to re-join with the given member-id: consumer-jensgroup-1-5ec4c0f6-7584-4a53-ab9b-307cac081a83
+2024-10-14T19:48:08.840Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] (Re-)joining group
+2024-10-14T19:48:11.866Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Successfully joined group with generation Generation{generationId=1, memberId='consumer-jensgroup-1-5ec4c0f6-7584-4a53-ab9b-307cac081a83', protocol='range'}
+2024-10-14T19:48:11.873Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Finished assignment for group at generation 1: {consumer-jensgroup-1-5ec4c0f6-7584-4a53-ab9b-307cac081a83=Assignment(partitions=[jenstest-0])}
+2024-10-14T19:48:11.893Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Successfully synced group in generation Generation{generationId=1, memberId='consumer-jensgroup-1-5ec4c0f6-7584-4a53-ab9b-307cac081a83', protocol='range'}
+2024-10-14T19:48:11.893Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Notifying assignor about the new Assignment(partitions=[jenstest-0])
+2024-10-14T19:48:11.895Z  INFO 1 --- [pool-5-thread-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Adding newly assigned partitions: jenstest-0
+2024-10-14T19:48:11.905Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Found no committed offset for partition jenstest-0
+2024-10-14T19:48:11.913Z  INFO 1 --- [pool-5-thread-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-jensgroup-1, groupId=jensgroup] Resetting offset for partition jenstest-0 to position FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9093 (id: 1 rack: null)], epoch=0}}.
+2024-10-14T19:48:12.197Z  INFO 1 --- [pool-5-thread-1] i.c.c.k.inbound.KafkaConnectorConsumer   : Consumer status changed to UP, deduplication ID: <default>-kafka-poc-283781868
+2024-10-14T19:48:15.218Z ERROR 1 --- [pool-5-thread-1] i.c.c.k.i.KafkaPropertyTransformer       : Cannot parse value to json object -> use the raw value
+
+com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'test4': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 6]
+        at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:2572)
+        at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2598)
+        at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2606)
+        at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:765)
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:3018)
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._reportInvalidToken(ReaderBasedJsonParser.java:2996)
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._matchToken2(ReaderBasedJsonParser.java:2777)
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._matchToken(ReaderBasedJsonParser.java:2755)
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser._matchTrue(ReaderBasedJsonParser.java:2715)
+        at com.fasterxml.jackson.core.json.ReaderBasedJsonParser.nextToken(ReaderBasedJsonParser.java:742)
+        at com.fasterxml.jackson.databind.ObjectReader._bindAsTree(ObjectReader.java:2157)
+        at com.fasterxml.jackson.databind.ObjectReader._bindAndCloseAsTree(ObjectReader.java:2137)
+        at com.fasterxml.jackson.databind.ObjectReader.readTree(ObjectReader.java:1839)
+        at io.camunda.connector.kafka.inbound.KafkaPropertyTransformer.setValue(KafkaPropertyTransformer.java:149)
+        at io.camunda.connector.kafka.inbound.KafkaPropertyTransformer.convertConsumerRecordToKafkaInboundMessage(KafkaPropertyTransformer.java:105)
+        at io.camunda.connector.kafka.inbound.KafkaConnectorConsumer.handleMessage(KafkaConnectorConsumer.java:178)
+        at io.camunda.connector.kafka.inbound.KafkaConnectorConsumer.pollAndPublish(KafkaConnectorConsumer.java:164)
+        at io.camunda.connector.kafka.inbound.KafkaConnectorConsumer.consume(KafkaConnectorConsumer.java:150)
+        at io.camunda.connector.kafka.inbound.KafkaConnectorConsumer.lambda$startConsumer$0(KafkaConnectorConsumer.java:100)
+        at dev.failsafe.Functions.lambda$toCtxSupplier$11(Functions.java:243)
+        at dev.failsafe.Functions.lambda$getPromise$1(Functions.java:83)
+        at dev.failsafe.Functions.lambda$toAsync$6(Functions.java:198)
+        at dev.failsafe.internal.util.DelegatingScheduler.lambda$schedule$0(DelegatingScheduler.java:141)
+        at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.base/java.lang.Thread.run(Unknown Source)
+
+2024-10-14T19:48:15.228Z  WARN 1 --- [pool-5-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:15.325Z  INFO 1 --- [pool-5-thread-1] i.c.c.r.c.i.c.InboundCorrelationHandler  : Published message with key: 2251799813685272
+2024-10-14T19:48:16.543Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:18.015Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:27.035Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:28.471Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:37.518Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
+2024-10-14T19:48:38.687Z  WARN 1 --- [pool-2-thread-1] i.c.z.client.impl.ZeebeCallCredentials   : The request's security level does not guarantee that the credentials will be confidential.
