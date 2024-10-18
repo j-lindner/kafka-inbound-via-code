@@ -1,82 +1,191 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.11</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>io.camunda.connector</groupId>
+        <artifactId>connector-runtime-bundle-parent</artifactId>
+        <version>8.5.7</version>
     </parent>
-
-    <groupId>com.customer.camunda</groupId>
-    <artifactId>kafka-ws-service</artifactId>
-    <version>1.0.5</version>
-    <name>kafka-ws-service</name>
-    <description>Kafka Workflow Service</description>
-
-    <properties>
-        <java.version>21</java.version>
-
-        <!-- Force dependencies to fix snyks -->
-        <snakeyaml.version>2.0</snakeyaml.version>
-    </properties>
+    <artifactId>connector-runtime-bundle-by-jens</artifactId>
+    <packaging>jar</packaging>
+    <description>Connectors Runtime Bundle including out-of-the-box connectors</description>
 
     <dependencies>
         <dependency>
             <groupId>io.camunda.connector</groupId>
-            <artifactId>spring-boot-starter-camunda-connectors</artifactId>
-            <version>8.5.7</version>
+            <artifactId>connector-runtime-application</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-aws-sqs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-aws-dynamodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-aws-eventbridge</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-aws-lambda</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-google-drive</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-rabbitmq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-sendgrid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-aws-sns</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-http-json</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-slack</artifactId>
         </dependency>
         <dependency>
             <groupId>io.camunda.connector</groupId>
             <artifactId>connector-kafka</artifactId>
-            <version>8.5.7</version>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-microsoft-teams</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-graphql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-google-sheets</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-webhook</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-http-polling</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-automationanywhere</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.camunda.connector</groupId>
+            <artifactId>connector-soap</artifactId>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.nimbusds</groupId>
-                <artifactId>nimbus-jose-jwt</artifactId>
-                <version>9.37.2</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
+                    <mainClass>io.camunda.connector.runtime.app.ConnectorRuntimeApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <version>${version.spring-boot}</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <shadedArtifactAttached>true</shadedArtifactAttached>
+                    <shadedClassifierName>with-dependencies</shadedClassifierName>
+                    <!-- no need for this since we are not consuming this artifact downstream -->
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <transformers>
+                        <!-- This is needed if you have dependencies that use Service Loader. Most Google Cloud client libraries does. -->
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
+                        <!-- This is needed to not repeat licenses in the META-INF directory -->
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
+                        <!-- This is needed to merge existing NOTICE files and keep them downstream -->
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
+                            <addHeader>false</addHeader>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring.handlers</resource>
+                        </transformer>
+                        <transformer implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer">
+                            <resource>META-INF/spring.factories</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring-autoconfigure-metadata.properties</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring.schemas</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/additional-spring-configuration-metadata.json</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring.tooling</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/spring-configuration-metadata.json</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                            <resource>META-INF/io.netty.versions.properties</resource>
+                        </transformer>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                            <mainClass>io.camunda.connector.runtime.app.ConnectorRuntimeApplication</mainClass>
+                        </transformer>
+                    </transformers>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
+                        <phase>package</phase>
                         <goals>
-                            <goal>repackage</goal>
+                            <goal>shade</goal>
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.cyclonedx</groupId>
+                <artifactId>cyclonedx-maven-plugin</artifactId>
+                <version>2.7.11</version>
+                <executions>
+
+                </executions>
+                <configuration>
+                    <projectType>library</projectType>
+                    <schemaVersion>1.4</schemaVersion>
+                    <includeBomSerialNumber>true</includeBomSerialNumber>
+                    <includeCompileScope>true</includeCompileScope>
+                    <includeProvidedScope>true</includeProvidedScope>
+                    <includeRuntimeScope>true</includeRuntimeScope>
+                    <includeSystemScope>true</includeSystemScope>
+                    <includeTestScope>false</includeTestScope>
+                    <includeLicenseText>false</includeLicenseText>
+                    <outputReactorProjects>true</outputReactorProjects>
+                    <outputFormat>all</outputFormat>
+                    <skipAttach>true</skipAttach>
+                    <outputName>connectors-bundle-sbom</outputName>
+                </configuration>
             </plugin>
         </plugins>
     </build>

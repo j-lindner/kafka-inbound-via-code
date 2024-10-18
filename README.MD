@@ -19,7 +19,8 @@ Package jar:
 mvn clean package  
 
 Build Dockerfile in root:  
-docker build --tag=kafka-ws-service:latest .  
+docker build --tag=kafka-ws-service:latest .
+docker build --tag=kafka-ws-by-jens:0.0.1 .
 
 docker-compose -f ./docker-compose-with-custom-image.yml up -d  
 

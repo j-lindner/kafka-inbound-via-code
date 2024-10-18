@@ -172,6 +172,7 @@ services:
       - operate
       - identity
 
+
   identity: # https://docs.camunda.io/docs/self-managed/platform-deployment/docker/#identity
     container_name: identity
     image: camunda/identity:${CAMUNDA_PLATFORM_VERSION}

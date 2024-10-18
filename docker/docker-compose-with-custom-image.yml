@@ -130,7 +130,7 @@ services:
       - elasticsearch
 
   kafka-ws-service:
-    image: kafka-ws-service:latest
+    image: kafka-ws-by-jens:0.0.1
     container_name: connectors
     ports:
       - "8085:8080"
@@ -150,8 +150,12 @@ services:
       - CAMUNDA_IDENTITY_AUDIENCE=operate-api
       - management.endpoints.web.exposure.include=health
       - management.endpoint.health.probes.enabled=true
-      - CONNECTOR_CUSTOMER_KAFKA_EXECUTABLE=io.camunda.connector.kafka.inbound.KafkaExecutable
-    #      - JAVA_TOOL_OPTIONS="-Djavax.net.ssl.trustStore=/opt/app/kafka.truststore.jks -Djavax.net.ssl.trustStorePassword=password"
+      # Kafka Consumer
+      - CONNECTOR_KAFKAIN_EXECUTABLE=io.camunda.connector.kafka.inbound.KafkaExecutable
+      # Kafka Producer
+      - CONNECTOR_KAFKAOUT_FUNCTION=io.camunda.connector.kafka.outbound.KafkaConnectorFunction
+      # REST Connector
+#      - CONNECTOR_RESTOUT_FUNCTION=io.camunda.connector.http.rest.HttpJsonFunction
     env_file: connector-secrets.txt
     healthcheck:
       test: [ "CMD-SHELL", "curl -f http://localhost:8080/actuator/health/readiness" ]
