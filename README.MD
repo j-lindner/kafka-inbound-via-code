@@ -1,3 +1,5 @@
+# CHECK OUT BRANCH this-should-work FOR STRIPPED DOWN APPROACH
+
 # pure docker-compose setup (with dockerized container runtime)
 
 ## setup with runtime via docker-compose
