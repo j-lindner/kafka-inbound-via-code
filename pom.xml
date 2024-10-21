@@ -8,7 +8,7 @@
     <description>Connectors Runtime with Kafka Connector</description>
 
     <properties>
-        <connectors.version>8.5.7</connectors.version>
+        <connectors.version>8.4.6</connectors.version>
     </properties>
 
     <dependencies>
