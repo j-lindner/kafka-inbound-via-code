@@ -20,7 +20,7 @@
           <zeebe:property name="topic.bootstrapServers" value="kafka:9093" />
           <zeebe:property name="topic.topicName" value="jenstest" />
           <zeebe:property name="groupId" value="jensgroup" />
-          <zeebe:property name="additionalProperties" value="={&#10;  &#34;security.protocol&#34;: &#34;SSL&#34;,&#10;  &#34;ssl.truststore.location&#34;: &#34;/Users/jens/projects/git/j-lindner/kafka-inbound-via-code/src/main/resources/kafka.server.truststore.jks&#34;,&#10;  &#34;ssl.truststore.password&#34;: &#34;password&#34;,&#10;  &#34;ssl.truststore.type&#34;: &#34;JKS&#34;&#10;}" />
+          <zeebe:property name="additionalProperties" value="={&#10;  &#34;security.protocol&#34;: &#34;SSL&#34;,&#10;  &#34;ssl.truststore.location&#34;: &#34;/Users/jens/projects/git/j-lindner/kafka-inbound-via-code/docker/kafka-ssl/kafka.server.truststore.jks&#34;,&#10;  &#34;ssl.truststore.password&#34;: &#34;password&#34;,&#10;  &#34;ssl.truststore.type&#34;: &#34;JKS&#34;&#10;}" />
           <zeebe:property name="autoOffsetReset" value="latest" />
           <zeebe:property name="schemaStrategy.type" value="noSchema" />
           <zeebe:property name="correlationRequired" value="notRequired" />

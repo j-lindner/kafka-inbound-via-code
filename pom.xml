@@ -1,190 +1,64 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>io.camunda.connector</groupId>
-        <artifactId>connector-runtime-bundle-parent</artifactId>
-        <version>8.5.7</version>
-    </parent>
+    <groupId>com.camunda.consulting</groupId>
     <artifactId>connector-runtime-bundle-by-jens</artifactId>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
-    <description>Connectors Runtime Bundle including out-of-the-box connectors</description>
+    <description>Connectors Runtime with Kafka Connector</description>
+
+    <properties>
+        <connectors.version>8.5.7</connectors.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-runtime-application</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-aws-sqs</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-aws-dynamodb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-aws-eventbridge</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-aws-lambda</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-google-drive</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-rabbitmq</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-sendgrid</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-aws-sns</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-http-json</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-slack</artifactId>
+            <artifactId>spring-boot-starter-camunda-connectors</artifactId>
+            <version>${connectors.version}</version>
         </dependency>
         <dependency>
             <groupId>io.camunda.connector</groupId>
             <artifactId>connector-kafka</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-microsoft-teams</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-graphql</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-google-sheets</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-webhook</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-http-polling</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-automationanywhere</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.camunda.connector</groupId>
-            <artifactId>connector-soap</artifactId>
+            <version>${connectors.version}</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <configuration>
+                        <environmentVariables>
+                            <CAMUNDA_IDENTITY_AUDIENCE>operate-api</CAMUNDA_IDENTITY_AUDIENCE>
+                            <CAMUNDA_IDENTITY_CLIENT_ID>connectors</CAMUNDA_IDENTITY_CLIENT_ID>
+                            <CAMUNDA_IDENTITY_CLIENT_SECRET>XALaRPl5qwTEItdwCMiPS62nVpKs7dL7</CAMUNDA_IDENTITY_CLIENT_SECRET>
+                            <CAMUNDA_IDENTITY_ISSUER_BACKEND_URL>http://localhost:18080/auth/realms/camunda-platform</CAMUNDA_IDENTITY_ISSUER_BACKEND_URL>
+                            <CAMUNDA_IDENTITY_TYPE>KEYCLOAK</CAMUNDA_IDENTITY_TYPE>
+                            <CAMUNDA_OPERATE_CLIENT_URL>http://localhost:8081</CAMUNDA_OPERATE_CLIENT_URL>
+                            <CONNECTOR_KAFKA_EXECUTABLE>io.camunda.connector.kafka.inbound.KafkaExecutable</CONNECTOR_KAFKA_EXECUTABLE>
+                            <KAFKA_BOOTSTRAP_SERVER>kafka:9093</KAFKA_BOOTSTRAP_SERVER>
+                            <KAFKA_GROUP_ID>jensgroup</KAFKA_GROUP_ID>
+                            <KAFKA_TOPIC>jenstest</KAFKA_TOPIC>
+                            <SSL_TRUSTSTORE_LOCATION>/Users/jens/projects/git/j-lindner/kafka-inbound-via-code/docker/kafka-ssl/kafka.server.truststore.jks</SSL_TRUSTSTORE_LOCATION>
+                            <SSL_TRUSTSTORE_PASSWORD>password</SSL_TRUSTSTORE_PASSWORD>
+                            <ZEEBE_AUTHENTICATION_MODE>none</ZEEBE_AUTHENTICATION_MODE>
+                            <ZEEBE_AUTHORIZATION_SERVER_URL>http://localhost:18080/auth/realms/camunda-platform/protocol/openid-connect/token</ZEEBE_AUTHORIZATION_SERVER_URL>
+                            <ZEEBE_CLIENT_BROKER_GATEWAY_ADDRESS>localhost:26500</ZEEBE_CLIENT_BROKER_GATEWAY_ADDRESS>
+                            <ZEEBE_CLIENT_CONFIG_PATH>/tmp/zeebe_auth_cache</ZEEBE_CLIENT_CONFIG_PATH>
+                            <ZEEBE_CLIENT_ID>zeebe</ZEEBE_CLIENT_ID>
+                            <ZEEBE_CLIENT_SECRET>zecret</ZEEBE_CLIENT_SECRET>
+                            <ZEEBE_CLIENT_SECURITY_PLAINTEXT>true</ZEEBE_CLIENT_SECURITY_PLAINTEXT>
+                            <ZEEBE_TOKEN_AUDIENCE>zeebe-api</ZEEBE_TOKEN_AUDIENCE>
+                        </environmentVariables>
+                    </configuration>
+                </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>io.camunda.connector.runtime.app.ConnectorRuntimeApplication</mainClass>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-maven-plugin</artifactId>
-                        <version>${version.spring-boot}</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <shadedArtifactAttached>true</shadedArtifactAttached>
-                    <shadedClassifierName>with-dependencies</shadedClassifierName>
-                    <!-- no need for this since we are not consuming this artifact downstream -->
-                    <createDependencyReducedPom>false</createDependencyReducedPom>
-                    <transformers>
-                        <!-- This is needed if you have dependencies that use Service Loader. Most Google Cloud client libraries does. -->
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                        <!-- This is needed to not repeat licenses in the META-INF directory -->
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer" />
-                        <!-- This is needed to merge existing NOTICE files and keep them downstream -->
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheNoticeResourceTransformer">
-                            <addHeader>false</addHeader>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring.handlers</resource>
-                        </transformer>
-                        <transformer implementation="org.springframework.boot.maven.PropertiesMergingResourceTransformer">
-                            <resource>META-INF/spring.factories</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring-autoconfigure-metadata.properties</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring.schemas</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/additional-spring-configuration-metadata.json</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring.tooling</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/spring-configuration-metadata.json</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-                            <resource>META-INF/io.netty.versions.properties</resource>
-                        </transformer>
-                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>io.camunda.connector.runtime.app.ConnectorRuntimeApplication</mainClass>
-                        </transformer>
-                    </transformers>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.cyclonedx</groupId>
-                <artifactId>cyclonedx-maven-plugin</artifactId>
-                <version>2.7.11</version>
-                <executions>
-
-                </executions>
-                <configuration>
-                    <projectType>library</projectType>
-                    <schemaVersion>1.4</schemaVersion>
-                    <includeBomSerialNumber>true</includeBomSerialNumber>
-                    <includeCompileScope>true</includeCompileScope>
-                    <includeProvidedScope>true</includeProvidedScope>
-                    <includeRuntimeScope>true</includeRuntimeScope>
-                    <includeSystemScope>true</includeSystemScope>
-                    <includeTestScope>false</includeTestScope>
-                    <includeLicenseText>false</includeLicenseText>
-                    <outputReactorProjects>true</outputReactorProjects>
-                    <outputFormat>all</outputFormat>
-                    <skipAttach>true</skipAttach>
-                    <outputName>connectors-bundle-sbom</outputName>
+                    <mainClass>com.camunda.consulting.kafkainboundviacode.KafkaInboundViaCodeApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
